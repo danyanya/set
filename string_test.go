@@ -26,5 +26,15 @@ func TestStoreLoad(T *testing.T) {
 	} else {
 		T.Errorf("aa is not in set")
 	}
+}
 
+func TestStoreKeys(T *testing.T) {
+	s := String{}
+	s.Store("aa")
+	s.Store("bb")
+
+	keys := s.Keys()
+	if len(keys) != 2 || keys[0] != "aa" || keys[1] != "bb" {
+		T.Errorf("failed with keys: %+v", keys)
+	}
 }

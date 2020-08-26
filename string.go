@@ -51,3 +51,19 @@ func (m *String) Delete(key string) {
 	defer m.m.Unlock()
 	delete(m.d, key)
 }
+
+// Keys for return all keys in set
+func (m *String) Keys() []string {
+	if m.d == nil {
+		return []string{}
+	}
+
+	m.m.Lock()
+	defer m.m.Unlock()
+
+	keys := make([]string, 0, len(m.d))
+	for k := range m.d {
+		keys = append(keys, k)
+	}
+	return keys
+}
