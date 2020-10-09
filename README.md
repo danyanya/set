@@ -35,4 +35,5 @@ func main() {
 
 ## Copyright
 
-Made by Sliusar Danya in 2020.  
+Made by Sliusar Danya in 2020. 
+ 
